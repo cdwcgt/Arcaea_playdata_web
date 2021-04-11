@@ -1,6 +1,3 @@
-"""
-The flask application package.
-"""
 import random
 import string
 from flask import Flask,g
