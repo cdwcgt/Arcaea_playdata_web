@@ -1,0 +1,2 @@
+# Arcaea_playdata_web
+使用python flask框架+sqlite数据库制作的Arcaea查分记录查询
