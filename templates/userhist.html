@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html class="small-scroll-bar no-js bg" lang="zh-cmn-Hans">
+<head>
+    <meta charset="utf-8" />
+    <title>{{user_info[0]['name']}} 的查询记录</title>
+</head>
+<body>
+
+    <table border="1" cellpadding="4"">
+
+        <tr>
+            <th align="center" rowspan="2" colspan="1">用户查询记录</th>
+            <th align="center">UserName</th>
+            <th align="center">Potential</th>
+            <th align="center">UserID</th>
+            <th align="center" rowspan="2" colspan="4">Statisted by Chieri Bot</th>
+        </tr>
+        <tr>
+            <td align="center">{{user_info[0]['name']}}</td>
+            <td align="center">{{user_info[0]['ptt']}}</td>
+            <td align="center">{{user_info[0]['id']}}</td>
+        </tr>
+        <tr>
+            <th align="left">Song</th>
+            <th align="left">Score</th>
+            <th align="left">单曲PTT</th>
+            <th align="left">PURE</th>
+            <th align="left">FAR</th>
+            <th align="left">LOST</th>
+            <th align="left">TIME</th>
+            <th align="left">本次查询用户PTT</th>
+        </tr>
+
+        {% for u in user_h %}
+        <tr>
+            <td>{{u.songname}} [{{u.songdiff}} {{u.songrating}}]</td>
+            <td>{{u.score_str}}</td>
+            <td>{{u.getptt}}</td>
+            <td>{{u.pure}}({{u.purep}})</td>
+            <td>{{u.far}}</td>
+            <td>{{u.lost}}</td>
+            <td>{{u.time_str}}</td>
+            <td>{{u.userptt}}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+</body>
+</html>
+
+
+
+<link rel="stylesheet" href="/nb.css" type="text/css" />
+
+
+
+<!--
+<style type="text/css">
+
+    html.bg {
+        background: url(https://qwq) center center no-repeat no-repeat fixed #6A6B6F;
+        background-size: cover;
+    }
+
+    .cool-transparent .off-screen + * .app-content-body {
+        background: url(https://qwq) center center no-repeat no-repeat fixed #6A6B6F;
+        background-size: cover;
+    }
+</style>
+-->
