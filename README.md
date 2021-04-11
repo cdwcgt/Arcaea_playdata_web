@@ -23,7 +23,7 @@
     输出sql ＝ 子文本替换 (输出sql, “[time]”, json.取属性 (“content['recent_score']['time_played']”).取数据文本 (), , , 真)
     输出sql ＝ 子文本替换 (输出sql, “[userptt]”, 到文本 (到数值 (json.取属性 (“content.rating”).取数据文本 ()) ÷ 100), , , 真)
 
-    输出sql ＝ 子文本替换 (输出sql, “[score_str]”, 子文本替换 (曲目分数加分隔符 (json.取属性 (“content['recent_score'].score”).取数据文本 ()), “'”, “''”, , , 真), , , 真)
+    输出sql ＝ 子文本替换 (输出sql, “[score_str]”, 子文本替换 (格式化分数 (json.取属性 (“content['recent_score'].score”).取数据文本 ()), “'”, “''”, , , 真), , , 真)
     输出sql ＝ 子文本替换 (输出sql, “[time_str]”, 时间_时间戳转文本 (json.取属性 (“content['recent_score']['time_played']”).取数据文本 ()), , , 真)
 
 ```
