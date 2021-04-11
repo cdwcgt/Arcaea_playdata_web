@@ -27,14 +27,14 @@ def query_db(db_path,query, args=(),one=False):
 @app.route('/arcquery/<user_id>')
 def queryhist_page(user_id):
     if str.isdigit(user_id) == False:   #仅允许纯数字id
-        return('非法id')
+        return('非法id',403)
     db_p='C:\\Users\\Administrator\\arc\\database\\userplayed.db'
 
     user_h = query_db(db_p,'select * from \''+ user_id +'\' order by time DESC')
     user_info = query_db(db_p,'select * from userinfo where id glob \''+ user_id +'\'')
     print(user_info)
     if os.path.isfile('C:\\Users\\Administrator\\Desktop\\arc\\qu_history\\no_query\\' + user_id): #用户决定是否允许网页查询。由bot交互
-        return('用户 '+ user_id +' 已设置禁止被查询。若非您本人设置,请在群内发送`#arc web refute`')
+        return('用户 '+ user_id +' 已设置禁止被查询。若非您本人设置,请在群内发送`#arc web refute`',403)
     return render_template('userhist.html',user_info=user_info,user_h=user_h)
 
 
