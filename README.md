@@ -1,7 +1,7 @@
 # Arcaea_playdata_web
 使用python flask框架+sqlite数据库制作的Arcaea查分记录查询<br/>
 .sql内[]自行替换成对应的数据<br/>
-yyy例:
+文本替换yyy例:
 ```
 .版本 2
 .支持库 eAPI
